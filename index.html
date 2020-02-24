@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Payment System</title>
+    <link rel="stylesheet" href="https://nutpanda.com/main.css">
+    <style>
+        .shadow.is-success {
+            -webkit-box-shadow: inset 0 -6px 0 rgba(32, 156, 238, 0.2);
+            box-shadow: inset 0 -6px 0 rgba(32, 156, 238, 0.2)
+        }
+
+    </style>
+    <!-- PWA Manifest-->
+    <link rel="manifest" href="/pwa-manifest.json" />
+    <link rel="canonical" href="https://idpay.devx.space" />
+    <link rel="icon" type="image/x-icon" href="https://nutpanda.com/favicon.ico" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <i class="fa fa-money"></i>&nbsp;<b>ID Pay</b>
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-link" href="#contact">
+                            <strong>Contact</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <section>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <h3 class="title has-text-centered"><b class="shadow is-success">Payment ID</b></h3>
+            <section style="padding-right: 5rem; padding-left: 5rem;">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-rounded" type="text" placeholder="Payment ID Here" id="payid">
+                    </div>
+                </div>
+                <div class="field is-grouped is-grouped-centered">
+                            <div class="control">
+                                <div class="buttons has-addons is-centered">
+                                    <button class="button is-rounded is-link" onclick="pay()">Pay Now</button>
+                                </div>
+                            </div>
+                        </div>
+            </section>
+        </section>
+        <p>&nbsp;<br>&nbsp;</p>
+        <section class="section" id="go">
+
+
+            <p>&nbsp;<br></p>
+            <h3 class="title has-text-centered"><b class="shadow is-success">FAQ</b></h3>
+            <br>
+            <p class="subtitle has-text-centered"><b>What is ID PAY?</b></p>
+            <p class="subtitle has-text-centered">Light web based payment application where payment is done using unique ID with end to end encrytion.</p>
+
+            <br>
+
+            <div id="contact"></div>
+            <h3 class="title has-text-centered"><b class="shadow is-success">Get in Touch</b></h3>
+
+            <form action=" https://formsubmit.co/support@indiragusto.com " method="POST">
+                <input type="hidden" name="_next" value="https://idpay.devx.space">
+                <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="e.g Ankit Ghosh">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="e.g. ankit@gmail.com">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Contact No.</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="e.g. +91-9876543210">
+                    </div>
+                </div>
+                <input type="text" name="_honey" style="display:none">
+                <div class="feild has-text-centered">
+                    <div class="control">
+                        <div class="has-text-centered">
+                            <button class="button is-link" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+        <p id="demo"></p>
+        <footer class="footer">
+            <div class="has-text-centered">
+                <b class="has-text-grey is-size-6"><i class="fa fa-copyright"></i>&nbsp;ID Pay</b><br>
+                <span class="has-text-grey is-size-6">
+                    <a class="has-text-grey is-size-6" href=""><b>Privacy Policy</b></a> | <a class="has-text-grey is-size-6" href=""><b>Disclaimer</b></a><br>
+                </span>
+                <a href="" target="_blank" rel="noreferrer" aria-label="Twittter"><i class="fa fa-twitter-square is-size-3" style="color: #1a62f2"></i></a>&nbsp;
+                <a href="" target="_blank" rel="noreferrer" aria-label="Github"><i class="fa fa-facebook-square is-size-3" style="color: #1a62f2"></i></a>&nbsp;<br>
+            </div>
+            <div id="load"></div>
+        </footer>
+    </div>
+    <script src="https://js.instamojo.com/v1/checkout.js"></script>
+    <script>
+        function pay() {
+         var inputvalue = $("#payid").val();
+            Instamojo.open("https://www.instamojo.com/@" + inputvalue);
+        }
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
